@@ -45,7 +45,7 @@ function createRandomNumber(minNumber, maxNumber)
  * @param { string } word 
  * @returns { string }
  */
-function capitaliseString(word)
+function capitalizeString(word)
 {
     // Prüfe ob ein Wort vorhanden ist
     if(word === undefined || word.length === 0 || !isNaN(word))
@@ -66,4 +66,31 @@ function capitaliseString(word)
 
 
 // - Eine Funktion mit der wie den Benutzernamen generieren und auf die Ergebnisse der anderen Funktinen zugreifen
+
+function createRandomUserName(maxNumber)  
+{
+    // wir holen uns die Wörter
+    const words = getWords();
+
+     // wir holen uns aus der Wortliste die Ajektive
+     const adj = words.adjs[ Math.floor(Math.random() * (words.adjs.length -1)) ] ;
+
+     // wir holen uns aus der Wortliste die Nomen
+     const noun = words.nouns[ Math.floor(Math.random() * (words.nouns.length - 1)) ];
+
+     // Wir hollen uns unsere zufalszahl
+     const randomNumber = createRandomNumber(10000, maxNumber);
+
+
+     const finalUserName = `${ capitalizeString(adj) }${ capitalizeString(noun) }${ maxNumber !== 0 ? randomNumber : ''}`
+
+     // Wir geben einen zusamengesetzten Namen zurück
+
+     return finalUserName; 
+
+}
+createRandomUserName(50000);
+
 // - Einen Export, um die Application in einer anderen zu nutzen
+
+exports.createUserName = (maxNumber) => createRandomUserName(maxNumber);
