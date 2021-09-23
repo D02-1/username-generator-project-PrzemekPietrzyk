@@ -19,6 +19,25 @@ function getWords()
 }
 
 // - Eine Funktion um die zufällige Nummer hinter dem Namen zugenerieren
+/**
+ * @createRandomNumber
+ * @description
+ * @param { number } minNumber 
+ * @param { number} maxNumber 
+ * @returns { number}
+ */
+function createRandomNumber(minNumber, maxNumber)
+{
+    // Wir erschaffen eine Zufallszahl aus einer minimalen und maximalen Zahl
+    const num = Math.floor(Math.random() * (maxNumber - minNumber) + minNumber);
+
+    // 
+
+    // Wir geben die zufällige nummer zurück
+    return num
+
+}
+
 // - Eine Funktion mit der wir den ersten Buchstaben des jeweiligen Wortes groß schreiben (PascalCase)
 // - Eine Funktion mit der wie den Benutzernamen generieren und auf die Ergebnisse der anderen Funktinen zugreifen
 // - Einen Export, um die Application in einer anderen zu nutzen
